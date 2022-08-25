@@ -76,7 +76,9 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
 
-
+	// Фиксированный header
+	const headerHeight = document.querySelector('.header__top').clientHeight
+	document.querySelector('.header').style.paddingTop = `${headerHeight}px`;
 
 });
 

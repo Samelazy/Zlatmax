@@ -203,7 +203,6 @@
 		img {
 			max-width: 100%;
 			position: relative;
-			z-index: 2;
 		}
 	}
 	// .media-main-block__tips
@@ -213,7 +212,6 @@
 		height: 100%;
 		top: 0;
 		left: 0;
-		z-index: 5;
 	}
 	// .media-main-block__tip
 	&__tip {
@@ -243,7 +241,7 @@
 		}
 		span {
 			position: relative;
-			z-index: 2;
+			z-index: 1;
 			color: #fff;
 			font-weight: 600;
 			font-size: rem(20);
