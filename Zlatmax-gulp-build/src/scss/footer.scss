@@ -1,0 +1,198 @@
+//====================================================================================================
+.footer {
+	background-color: $mainDarkColor;
+}
+.text-footer {
+	@include adaptiveValue("padding-top", 60, 40);
+	@include adaptiveValue("padding-bottom", 60, 40);
+	background: url('@img/footer/bg.jpg') top / cover no-repeat;
+	// .text-footer__title
+	&__title {
+		text-align: center;
+		font-weight: 600;
+		@include adaptiveValue("font-size", 30, 24);
+		line-height: math.div(46 , 30);
+		color: $mainOrange;
+		&:not(:last-child) {margin-bottom: em(30, 30);}
+	}
+	// .text-footer__text
+	&__text {
+		color: #fff;
+		line-height: math.div(27 , 18);
+		@include adaptiveValue("font-size", 18, 16);
+	}
+}
+.body-footer {
+	@include adaptiveValue("padding-top", 100, 40);
+	@include adaptiveValue("padding-bottom", 50, 40);
+	display: grid;
+	@include adaptiveValue("gap", 35, 25);
+	// .body-footer__row
+	&__row {
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(rem(290), 1fr));
+		column-gap: rem(40);
+		@include adaptiveValue("row-gap", 40, 20);
+		&:not(:last-child) {
+			padding: 0 0 rem(30) 0;
+			border-bottom: 1px solid rgba(255,255,255, 0.5);
+		}
+	}
+	&__bottom {
+		color: rgba(255, 255, 255, 0.8);
+		font-size: rem(14);
+		line-height: math.div(27 , 14);
+		@media (min-width:em(1200)){
+			display: flex;
+			justify-content: space-between;
+			gap: rem(20);
+		}
+		span {
+			white-space: nowrap;
+			color: $mainOrange;
+		}
+	}
+	// .body-footer__ruels
+	&__rules {
+		max-width: rem(820);
+	}
+}
+.spoller-item-footer {
+	// .spollers-item-footer__title
+	&__title {
+		text-transform: uppercase;
+		color: #fff;
+		font-weight: 600;
+		line-height: math.div(22 , 18);
+		._spoller-init & {
+			display: flex;
+			width: 100%;
+			justify-content: space-between;
+			align-items: center;
+			gap: rem(10);
+			&::after{
+				content:'\e900';
+				font-size: rem(8);
+				margin: em(5,8) 0 0 0;
+				transition: transform 0.3s ease 0s;
+				@extend %ic;
+			}
+			&._spoller-active {
+				&::after{
+					transform: rotate(-180deg);
+				}
+			}
+		}
+	}
+	// .spollers-item-footer__body
+	&__body {
+		@include adaptiveValue("padding-top", 30, 20);
+		@include adaptiveValue("padding-bottom", 30, 20);
+	}
+	&__text {
+		max-width: rem(320);
+		line-height: math.div(27 , 18);
+		color: rgba(255, 255, 255, 0.8);
+		a {
+			color: $mainOrange;
+		}
+	}
+}
+.menu-footer {
+	&:not(:last-child) {
+		@include adaptiveValue("margin-bottom", 32, 20);
+	}
+	// .menu-footer__item
+	&__item {
+		line-height: 1.5;
+		display: flex;
+		color: rgba(255, 255, 255, 0.8);
+		&:not(:last-child) {margin-bottom: em(20, 18);}
+		&::before{
+			font-size: rem(18);
+			margin: em(5,15) em(10,15) 0 0;
+		}
+	}
+	// .menu-footer__link
+	&__link {
+		display: inline-flex;
+		line-height: math.div(27, 18);
+		color: rgba(255,255,255,0.8);
+		&::before{
+			font-size: rem(18);
+			margin: em(2,15) em(10,15) 0 0;
+		}
+		&._icon-footer-mail {
+			&::before{
+				font-size: rem(13);
+				margin: em(8,15) em(10,15) 0 0;
+			}
+		}
+	}
+}
+.social-footer {
+	display: flex;
+	gap: rem(24);
+}
+.footer-subscribe {
+	// .footer-subscribe__label
+	&__label {
+		line-height: math.div(22 , 18);
+		display: block;
+		color: rgba(255,255,255, 0.8);
+		&:not(:last-child) {margin-bottom: em(10, 18);}
+	}
+	// .footer-subscribe__line
+	&__line {
+		display: flex;
+		border-radius: rem(3);
+		position: relative;
+		.form__error {
+			position: absolute;
+			bottom: rem(-15);
+			font-size: rem(10);
+			color: red;
+		}
+		&._form-focus {
+			border: transparent;
+			background: transparent;
+		}
+		&._form-focus button {
+			height: rem(54);
+			margin-top: rem(-2);
+		}
+	}
+	// .footer-subscribe__input
+	&__input {
+		background: rgba(255, 255, 255, 0.05);
+		border-radius: rem(3);
+		height: rem(50);
+		padding: 0 rem(20);
+		color: #fff;
+		width: 100%;
+		border: 1px solid #fff;
+		border-right: none;
+		&._form-focus {
+			padding: 0 rem(20);
+			border: none !important;
+			background: none;
+		}
+	}
+	// .footer-subscribe__button
+	&__button {
+		flex: 0 0 rem(50);
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		border-radius: 0 rem(3) rem(3) 0;
+		margin-left: rem(-2);
+		background-color: $mainOrange;
+		&::before{
+			transform: rotate(-90deg);
+			color: #fff;
+			font-size: rem(8);
+		}
+	}
+}
+
+//====================================================================================================
