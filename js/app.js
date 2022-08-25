@@ -8918,6 +8918,8 @@
                 input.addEventListener("keydown", onPhoneKeyDown);
                 input.addEventListener("paste", onPhonePaste);
             }
+            const headerHeight = document.querySelector(".header__top").clientHeight;
+            document.querySelector(".header").style.paddingTop = `${headerHeight}px`;
         }));
         document.addEventListener("click", documentActions);
         const menuBlocks = document.querySelectorAll(".sub-menu-catalog__block");
